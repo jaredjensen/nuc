@@ -1,0 +1,27 @@
+version: '3.5'
+services:
+
+  home_assistant:
+    container_name: home_assistant
+    image: homeassistant/home-assistant:stable
+    restart: always
+    network_mode: host
+    devices:
+      - '/dev/ttyUSB0:/dev/ttyUSB0'
+      - '/dev/ttyUSB1:/dev/ttyUSB1'
+    volumes:
+      - ./home-assistant-config:/config
+
+  zone_minder:
+    container_name: zone_minder
+    image: zoneminderhq/zoneminder:latest-ubuntu18.04
+    ports:
+      - '1080:80'
+    environment:
+      TZ: 'America/Los_Angeles'
+    volumes:
+      - ./zoneminder/events:/var/cache/zoneminder/events
+      - ./zoneminder/images:/var/cache/zoneminder/images
+      - ./zoneminder/logs:/var/log/zm
+      - ./zoneminder/mysql:/var/lib/mysql
+    shm_size: '512m'
