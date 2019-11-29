@@ -24,7 +24,7 @@ sudo ufw allow 22
 
 ```bash
 # Connect
-ssh jared@198.168.0.208
+ssh jared@192.168.0.208
 # Shutdown
 sudo poweroff
 # Fix boot to initramfs
