@@ -17,6 +17,7 @@ services:
     image: zoneminderhq/zoneminder:latest-ubuntu18.04
     ports:
       - '1080:80'
+    restart: always
     environment:
       TZ: 'America/Los_Angeles'
     volumes:
