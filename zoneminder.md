@@ -29,3 +29,22 @@ ZoneMinder is running in Docker. The following folders are mounted to ~/apps/zon
 | Preserve Aspect Ratio   | Not checked                                                              |
 | Orientation             | Normal                                                                   |
 | Deinterlacing           | Disabled                                                                 |
+
+## Upgrading ZoneMinder
+
+```bash
+# Stop the container
+sudo docker stop zone_minder
+
+# Delete the container and image
+sudo docker container rm zone_minder
+sudo docker image ls
+sudo docker image rm {image_id}
+
+# Restart
+sudo docker-compose up -d zone_minder
+
+# Optionally apply updates in container
+sudo docker exec -it zone_minder bash
+zmupdate.pl
+```
