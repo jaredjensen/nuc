@@ -6,7 +6,7 @@ If editing config files is required:
 
 ```bash
 # Connect to the NUC
-ssh -l jared 192.168.208
+ssh -l jared 192.168.86.208
 
 # Shell into the HA container
 sudo docker exec -it home_assistant bash
