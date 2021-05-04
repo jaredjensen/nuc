@@ -11,5 +11,5 @@ The NUC is running Ubuntu with SSH, Samba and RAID. Docker is used to run Home A
 ## Connecting
 
 ```bash
-ssh -l jared 192.168.0.208
+ssh -l jared 192.168.86.208
 ```
